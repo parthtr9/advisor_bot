@@ -10,8 +10,8 @@ from langgraph.graph import START, StateGraph
 from typing_extensions import List, TypedDict
 
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
-os.environ["LANGCHAIN_API_KEY"] = "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"
-os.environ["GOOGLE_API_KEY"] = "AIzaSyCn6-OXpvGTNMHlBxw6NrgebC1giziRLrQ"
+os.environ["LANGCHAIN_API_KEY"] = ....
+os.environ["GOOGLE_API_KEY"] = ....
 
 llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro")
 
@@ -20,7 +20,7 @@ embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
 vector_store = InMemoryVectorStore(embeddings)
 
 # Load and chunk contents of the blog
-loader = PyPDFLoader(r"/Users/parth/Desktop/Internship/PProject/RAG/something.pdf")
+loader = PyPDFLoader(r"/something.pdf")
 docs = loader.load()
 
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
